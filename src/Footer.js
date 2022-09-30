@@ -40,9 +40,9 @@ export default function Footer(props) {
   return (
     <div className="footer-concluidos">
       <div className="container-botoes">
-        <button onClick={() => Responder("nao")} disabled={!virada}>Não lembrei</button>
+        <button onClick={() => Responder("erro")} disabled={!virada}>Não lembrei</button>
         <button onClick={() => Responder("quase")} disabled={!virada}>Quase não lembrei</button>
-        <button onClick={() => Responder("zap")} disabled={!virada}>Zap!</button>
+        <button onClick={() => Responder("certo")} disabled={!virada}>Zap!</button>
       </div>
       <ContarConcluidos/>
     </div>
