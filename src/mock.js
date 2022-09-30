@@ -1,4 +1,4 @@
-const DECKTESTE =[
+const DECKTESTE = [
     {question: "O que é JSX?" ,answer: "Uma extensão de linguagem do JavaScript"},
     {question: "O React é __ ",answer: "uma biblioteca JavaScript para construção de interfaces"},
     {question: "Componentes devem iniciar com __ ",answer: "letra maiúscula"},
