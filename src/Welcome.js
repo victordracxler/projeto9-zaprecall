@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export default function Welcome(props) {
-  const { logo, iniciado, setIniciado } = props;
+  const { logo, setIniciado } = props;
 
   return (
     <>

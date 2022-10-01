@@ -7,7 +7,6 @@ import Perguntas from "./Perguntas";
 import GlobalStyle from "./globalStyles";
 import Welcome from "./Welcome";
 
-
 export default function App() {
   const allClosed = [];
   const allNull = [];
@@ -18,12 +17,12 @@ export default function App() {
   const [respondidas, setRespondidas] = useState(allNull);
   const [virada, setVirada] = useState(false);
   const [indiceAberta, setIndiceAberta] = useState(null);
-  const [iniciado, setIniciado] = useState(false)
+  const [iniciado, setIniciado] = useState(false);
 
-  const boasVindas = <Welcome logo={logo} iniciado={iniciado} setIniciado={setIniciado}/>
+  const boasVindas = <Welcome logo={logo} setIniciado={setIniciado} />;
   const corpo = (
     <>
-    <LogoContainer >
+      <LogoContainer>
         <img src={logo} alt="logo zaprecall" />
         <h1>ZapRecall</h1>
       </LogoContainer>
@@ -44,14 +43,12 @@ export default function App() {
         setIndiceAberta={setIndiceAberta}
       />
     </>
-  )
+  );
 
   return (
     <>
-    <GlobalStyle/>
-    <ScreenContainer >
-      {iniciado? corpo : boasVindas}
-    </ScreenContainer>
+      <GlobalStyle />
+      <ScreenContainer>{iniciado ? corpo : boasVindas}</ScreenContainer>
     </>
   );
 }
