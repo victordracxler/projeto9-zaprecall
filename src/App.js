@@ -4,6 +4,7 @@ import logo from "./assets/img/logo.png";
 import Footer from "./Footer";
 import DECKTESTE from "./mock";
 import Perguntas from "./Perguntas";
+import GlobalStyle from "./globalStyles";
 
 export default function App() {
   const allClosed = [];
@@ -17,6 +18,8 @@ export default function App() {
   const [indiceAberta, setIndiceAberta] = useState(null);
 
   return (
+    <>
+    <GlobalStyle/>
     <ScreenContainer >
       <LogoContainer >
         <img src={logo} alt="logo zaprecall" />
@@ -39,6 +42,7 @@ export default function App() {
         setIndiceAberta={setIndiceAberta}
       />
     </ScreenContainer>
+    </>
   );
 }
 
