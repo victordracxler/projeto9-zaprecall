@@ -9,4 +9,10 @@ const DECKTESTE = [
     {question: "Usamos estado (state) para __" ,answer: "dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"}
 ]
 
+export const CORES = {verde: "#2FBE34",
+amarelo: "#FF922E",
+vermelho: "#FF3030",
+cinza: "#333333"}
+
 export default DECKTESTE
+
