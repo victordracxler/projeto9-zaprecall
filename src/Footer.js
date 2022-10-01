@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styled from "styled-components";
 import { CORES } from "./mock";
 
@@ -14,9 +13,7 @@ export default function Footer(props) {
   } = props;
  
   const {verde, amarelo, vermelho} = CORES
-  
-  const [concluidos, setConcluidos] = useState(0);
-
+    
   function Responder(botao) {
     let novaRespondida = [...respondidas];
     novaRespondida[indiceAberta] = botao;
@@ -40,8 +37,6 @@ export default function Footer(props) {
       </ContainerBotoes>
       <ContarConcluidos
         respondidas={respondidas}
-        concluidos={concluidos}
-        setConcluidos={setConcluidos}
       />
     </FooterConcluidos>
   );
@@ -55,10 +50,10 @@ function ContarConcluidos({ respondidas, concluidos, setConcluidos }) {
       novoConcluidos++;
     }
   }
-  setConcluidos(novoConcluidos);
+
   return (
     <span>
-      {concluidos}/{respondidas.length} CONCLUÍDOS
+      {novoConcluidos}/{respondidas.length} CONCLUÍDOS
     </span>
   );
 }

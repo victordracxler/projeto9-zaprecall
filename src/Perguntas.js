@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styled from 'styled-components'
 import setaPlay from "./assets/img/seta_play.png";
 import setaVirar from "./assets/img/seta_virar.png";
@@ -35,7 +34,7 @@ export default function Perguntas(props) {
         if (respondidas[i] === null) {
             return (
             <PerguntaFechada key={i}>
-                <p>pergunta {i + 1}</p>
+                <p>Pergunta {i + 1}</p>
                 <img
                 onClick={() => {
                     setIndiceAberta(i);
@@ -66,9 +65,9 @@ export default function Perguntas(props) {
                     cor = cinza
                     break;
             }
-            return ( //colocar aqui se acertou ou não
-                <PerguntaFechada cor={cor} key={i} slash={true}>
-                    <p>pergunta {i + 1}</p>
+            return (
+                <PerguntaFechada cor={cor} key={i} line={true}>
+                    <p>Pergunta {i + 1}</p>
                     <img
                     src={icone}
                     alt="answered"
@@ -85,7 +84,7 @@ export default function Perguntas(props) {
 
 const PerguntaFechada = styled.li`
   width: 300px;
-  height: 35px;
+  height: 50px;
   background-color: #FFFFFF;
   margin: 12px;
   padding: 15px;
@@ -102,7 +101,7 @@ const PerguntaFechada = styled.li`
   font-size: 16px;
   line-height: 19px;
   color: ${props => props.cor};
-  text-decoration: ${props => (props.slash) && "line-through"};
+  text-decoration: ${props => (props.line) && "line-through"};
 }
 `
 
