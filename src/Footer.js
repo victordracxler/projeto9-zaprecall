@@ -25,13 +25,13 @@ export default function Footer(props) {
   return (
     <FooterConcluidos>
       <ContainerBotoes>
-        <BotaoResposta cor={vermelho} onClick={() => Responder("erro")} disabled={!virada}>
+        <BotaoResposta data-identifier="forgot-btn"  cor={vermelho} onClick={() => Responder("erro")} disabled={!virada}>
           Não lembrei
         </BotaoResposta>
-        <BotaoResposta cor={amarelo} onClick={() => Responder("quase")} disabled={!virada}>
+        <BotaoResposta data-identifier="almost-forgot-btn" cor={amarelo} onClick={() => Responder("quase")} disabled={!virada}>
           Quase não lembrei
         </BotaoResposta>
-        <BotaoResposta cor={verde} onClick={() => Responder("certo")} disabled={!virada}>
+        <BotaoResposta data-identifier="zap-btn" cor={verde} onClick={() => Responder("certo")} disabled={!virada}>
           Zap!
         </BotaoResposta>
       </ContainerBotoes>
@@ -52,7 +52,7 @@ function ContarConcluidos({ respondidas, concluidos, setConcluidos }) {
   }
 
   return (
-    <span>
+    <span data-identifier="flashcard-counter">
       {novoConcluidos}/{respondidas.length} CONCLUÍDOS
     </span>
   );
