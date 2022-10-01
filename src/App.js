@@ -5,6 +5,8 @@ import Footer from "./Footer";
 import DECKTESTE from "./mock";
 import Perguntas from "./Perguntas";
 import GlobalStyle from "./globalStyles";
+import Welcome from "./Welcome";
+
 
 export default function App() {
   const allClosed = [];
@@ -16,12 +18,12 @@ export default function App() {
   const [respondidas, setRespondidas] = useState(allNull);
   const [virada, setVirada] = useState(false);
   const [indiceAberta, setIndiceAberta] = useState(null);
+  const [iniciado, setIniciado] = useState(false)
 
-  return (
+  const boasVindas = <Welcome logo={logo} iniciado={iniciado} setIniciado={setIniciado}/>
+  const corpo = (
     <>
-    <GlobalStyle/>
-    <ScreenContainer >
-      <LogoContainer >
+    <LogoContainer >
         <img src={logo} alt="logo zaprecall" />
         <h1>ZapRecall</h1>
       </LogoContainer>
@@ -41,6 +43,14 @@ export default function App() {
         indiceAberta={indiceAberta}
         setIndiceAberta={setIndiceAberta}
       />
+    </>
+  )
+
+  return (
+    <>
+    <GlobalStyle/>
+    <ScreenContainer >
+      {iniciado? corpo : boasVindas}
     </ScreenContainer>
     </>
   );
